@@ -2,36 +2,20 @@
 """ENTER YOUR SOLUTION HERE!"""
 
 def primes(number_of_primes):
-
-
-    def isprime(num):
-        for n in range(2,int(num**0.5)+1):
-
-            if num%n==0:
-                return False
-        return True
-
-
-
+    if(number_of_primes<1):
+        raise ValueError("0 and negative numbers not accepted")
     list = []
-
-
-    if number_of_primes == 0 or number_of_primes < 0:
-        return ValueError
-
-
-    for x in range (2, number_of_primes):
-
-
-        if isprime(x) == True:
-            list.append(x)
-
-        else:
-            pass
-
-       
-
+    count = 0
+    prime_number = 2
+    while count < number_of_primes:
+        for n in range(2,prime_number):
+            if(prime_number % n == 0):
+                break
+        else:   
+            list.append(prime_number)
+            count+=1
+            
         
+        prime_number += 1
 
     return list
-
